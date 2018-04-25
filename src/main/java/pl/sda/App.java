@@ -8,16 +8,18 @@ public class App
 {
     public static void main( String[] args )
     {
-        CSVFileReader csvReader = new CSVFileReader();
-        JSONFileReader jsonReader = new JSONFileReader();
-
-        try {
-            List<Person> personList = csvReader.readPersonData("/home/michal/persons.csv");
-            for (Person person : personList) {
-                System.out.println(person.getName() + " " + person.getLastName() + " "+person.getAge());
-            }
-        } catch (IOException e) {
-            System.out.println("WYSTĄPIŁ BŁĄD");
-        }
+//        CSVFileReader csvReader = new CSVFileReader();
+//        JSONFileReader jsonReader = new JSONFileReader();
+//
+//        try {
+//            List<Person> personList = csvReader.readPersonData("/home/michal/persons.csv");
+//            for (Person person : personList) {
+//                System.out.println(person.getName() + " " + person.getLastName() + " "+person.getAge());
+//            }
+//        } catch (IOException e) {
+//            System.out.println("WYSTĄPIŁ BŁĄD");
+//        }
+        CSVFileWriter writer = new CSVFileWriter();
+        writer.write("/home/michal/plik.txt");
     }
 }
