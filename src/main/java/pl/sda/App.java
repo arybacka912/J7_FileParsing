@@ -8,10 +8,14 @@ public class App
 {
     public static void main( String[] args )
     {
-        CSVFileReader reader = new CSVFileReader();
+        CSVFileReader csvReader = new CSVFileReader();
+        JSONFileReader jsonReader = new JSONFileReader();
+
         try {
-            List<Person> personList = reader.readPersonData("/home/michal/persons.csv");
-            System.out.println(personList.toArray());
+            List<Person> personList = csvReader.readPersonData("/home/michal/persons.csv");
+            for (Person person : personList) {
+                System.out.println(person.getName() + " " + person.getLastName() + " "+person.getAge());
+            }
         } catch (IOException e) {
             System.out.println("WYSTĄPIŁ BŁĄD");
         }
