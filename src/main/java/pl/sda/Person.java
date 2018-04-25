@@ -28,4 +28,13 @@ public class Person {
     public void setAge(int age) {
         this.age = age;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        Person compared = (Person) obj;
+
+        return this.name.equals(compared.getName())
+                && this.lastName.equals(compared.getLastName())
+                && this.age == compared.getAge();
+    }
 }
