@@ -6,8 +6,7 @@ import java.util.List;
 //POJO - Plain Old Java Object
 public class App 
 {
-    public static void main( String[] args )
-    {
+    public static void main( String[] args ) throws IOException {
 //        CSVFileReader csvReader = new CSVFileReader();
 //        JSONFileReader jsonReader = new JSONFileReader();
 //
@@ -19,7 +18,10 @@ public class App
 //        } catch (IOException e) {
 //            System.out.println("WYSTĄPIŁ BŁĄD");
 //        }
-        CSVFileWriter writer = new CSVFileWriter();
-        writer.write("/home/michal/plik.txt");
+//        CSVFileWriter writer = new CSVFileWriter();
+//        writer.write("/home/michal/plik.txt");
+        JSONFileReader jsonFileReader = new JSONFileReader();
+        List<Person> persons = jsonFileReader.readPersonData("/home/michal/SDA/Java7/Projekty/J7_FileParsing/src/test/resources/persons.json");
+        System.out.println(persons);
     }
 }
